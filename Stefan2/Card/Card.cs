@@ -8,8 +8,13 @@ namespace CardPhun
 {
 
 
-    public class Card
+    public abstract class Card
     {
+
+        public Card()
+        {
+            
+        }
 
         //private int _mNumber;
 
@@ -43,6 +48,13 @@ namespace CardPhun
         {
             get { return Number == 11; }
         }
+
+        public bool IsPic
+        {
+            get { return Number > 11; }
+        }
+
+        public abstract int Value { get; }
     }
 
     public enum Znak
