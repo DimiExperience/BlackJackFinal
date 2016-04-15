@@ -25,7 +25,15 @@ namespace CardPhunTests
             Assert.AreEqual(newCard.Value, broj, "Converting number to Value failed");
             Assert.AreEqual(newCard.Suit, varZnak, "Suit doesnt assign properly");
         }
+
+        [TestMethod]
+        public void IsAceTest()
+        {
+            var newCard = new TestCard(11, Znak.CLUBS);
+            //e vidis, ne znam kako ovo da odradim...       
+        }
     }
+
 
     class TestCard : Card   //posto je klasa bila abstract, 
                             //napravio sam jednu ovde klasu koja 

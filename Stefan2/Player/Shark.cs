@@ -11,8 +11,14 @@ namespace Player
         protected Shark(string name, int balance) : base(name)
         {
             Balance = balance;
+
+            if (balance < 0)
+            {
+                throw new ArgumentException("Balance can't be negative!!!");
+            }
         }
         public int Balance { get; protected set; }
 
     }
+    
 }

@@ -8,7 +8,7 @@ using Stefan2.BlackJack;
 
 namespace BlackJack
 {
-    public class BjDealer : Dealer<BjCard, BjCardSet>
+    public class BjDealer : Dealer<BjCard, CardSet>
     {
         public BjDealer(string name) : base(name) { }
     }

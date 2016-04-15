@@ -9,14 +9,14 @@ using Stefan2.BlackJack;
 
 namespace BlackJack
 {
-    public class BjCardSet : CardSet<BjCard>
+    public class CardSet : CardSet<BjCard>
     {
-        public BjCardSet() 
+        public CardSet() 
         {
             _mCards = new List<BjCard>();
         }
 
-        public BjCardSet(List<BjCard> cards)
+        public CardSet(List<BjCard> cards)
         {
             _mCards = cards;
         }

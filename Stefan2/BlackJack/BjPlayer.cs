@@ -8,17 +8,10 @@ using Stefan2.BlackJack;
 
 namespace BlackJack
 {
-    public class BjPlayer : Shark<BjCard, BjCardSet>
+    public class BjPlayer : Shark<BjCard, CardSet>
     {
         public BjPlayer(string name, int balance) : base(name, balance)
         {
-          
-
         }
-
-        
-
-
-
     }
 }

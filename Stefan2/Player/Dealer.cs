@@ -7,7 +7,7 @@ using CardPhun;
 
 namespace Player
 {
-    public abstract class Dealer<T_CARD, T_CARDSET> where T_CARD : Card where T_CARDSET : CardSet<T_CARD>, new()//zasto T_CARD and so on... ali mislim da sam skapirao... T_CARD je Card, gde je T_SET od cardset od T_CARD sto dalje vodi do card, right... e sada zasto? zar niej moglo odmah da se uradi card i cardset?
+    public abstract class Dealer<T_CARD, T_CARDSET> where T_CARD : Card where T_CARDSET : CardSet<T_CARD>, new()
     {
         protected Dealer(string name)
         {
