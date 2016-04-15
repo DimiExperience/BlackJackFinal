@@ -11,7 +11,7 @@ namespace CardPhun
 
     public static class BlackJackUtil
     {
-        public static int GetBlackjackSum(CardSet set)
+        public static int GetBlackjackSum(BJCardSet set)
         {
             var numOfAces = 0;
             var retVal = 0;

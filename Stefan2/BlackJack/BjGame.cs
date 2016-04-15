@@ -14,7 +14,7 @@ using Stefan2.BlackJack;
 
 namespace BlackJack
 {
-    public class BjGame : GameBase<BjPlayer, BjDealer, BjCard, CardSet>
+    public class BjGame : GameBase<BjPlayer, BjDealer, BjCard, BJCardSet>
     {
 
 
