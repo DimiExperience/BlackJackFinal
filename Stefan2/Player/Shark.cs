@@ -14,7 +14,7 @@ namespace Player
 
             if (balance < 0)
             {
-                throw new ArgumentException("Balance can't be negative!!!");
+                throw new ArgumentException("Balance can't be negative!!!");//ovo ne znam kako da testiram
             }
         }
         public int Balance { get; protected set; }

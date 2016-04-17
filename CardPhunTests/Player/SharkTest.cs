@@ -26,7 +26,7 @@ namespace CardPhunTests.Player
         public void NegativeBalanceTest()//Ovaj fail-uje zato sto ne znam kako da napravim throw exception test...
         {
             var newShark = new NewShark("Stefan", -500);// Ovo mi je mnogo konfuzno, kako da napravim test za argument exception?
-        }
+        }//Ovo fail-uje, dodajem komentar samo da bi se setili...
     }
 
     public class NewShark : Shark<BjCard, BJCardSet>

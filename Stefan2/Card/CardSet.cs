@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CardPhun;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,7 +48,7 @@ namespace CardPhun
             var retVal = first ? _mCards.First() : _mCards.Last();
             if (first)
             {
-                _mCards.RemoveAt(0);
+                _mCards.RemoveAt(0);//nije mi bas najjasnije sta si ovime hteo da kazes kad si pisao?
             }
             else
             {
@@ -66,7 +67,7 @@ namespace CardPhun
             _mCards.AddRange(set._mCards);
         }
 
-        public abstract int GetSumOfCards();
+        public abstract int GetSumOfCards();// Zasto je ovo komentovano?
 /*        {
             return _mCards == null ? 0 : _mCards.Sum(c => c.Value); //Procitaj ili pluralsight: LINQ, Lambda Expressions
         }*/
@@ -83,7 +84,7 @@ namespace CardPhun
             {
                 sb.AppendFormat("{0}, ", card);
             }
-            return sb.ToString().TrimEnd(',');
+            return sb.ToString().TrimEnd(',', ' ');
         }
 
     }
