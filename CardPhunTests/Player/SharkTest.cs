@@ -29,7 +29,7 @@ namespace CardPhunTests.Player
         }//Ovo fail-uje, dodajem komentar samo da bi se setili...
     }
 
-    public class NewShark : Shark<BjCard, BJCardSet>
+    public class NewShark : Shark<BjCard, BJCardSet>    
     {
         public NewShark(string name, int balance) : base(name, balance)
         {

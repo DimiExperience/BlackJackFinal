@@ -2,6 +2,8 @@
 using System.Linq;
 using CardPhun;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace CardPhunTests.CardTests
 {
@@ -13,18 +15,46 @@ namespace CardPhunTests.CardTests
         {
             var card = new TestCard(1, Znak.CLUBS);
             var cardSet = new TestCardSet();
+            var initialCount = cardSet.Count;
             cardSet.AddToSet(card);
-            Assert.AreEqual(cardSet.Count, 1);
+            var finalCount = cardSet.Count;
+            Assert.AreEqual(finalCount - initialCount, 1);
         }
 
         [TestMethod]
-        public void AddToSetNumberTest()
+        [Repeat(100)]//s' obzirom da sam svatio random, onda ga proveravam vise puta? tako mi deluje logicno, bar u ovom slucaju...
+        public void GetSumOfCardsTest()//E sada, ja sam napravio dva testa koja rade slicne stvari, da li mora tako ili sam mogao da ostavim jedan i da mu verujem:) posto proveravaju vrlo slicnu stvar...
         {
-            var card = new TestCard(1, Znak.CLUBS);
             var cardSet = new TestCardSet();
-            cardSet.AddToSet(card);
-            Assert.AreEqual(cardSet.GetSumOfCards(), 1);//da li sam ovim proverio getsumofcards, ili to moram posebno kada dodjem do toga?
+            var random = new Random();
+            var actualCount = 0;
+            for (var i = 0; i < 5; i++)
+            {
+                var cardNumber = random.Next(1, 15);
+                var card = new TestCard(cardNumber, Znak.CLUBS);
+                cardSet.AddToSet(card);
+                actualCount += cardNumber;
+            }
+            Assert.AreEqual(cardSet.GetSumOfCards(), actualCount);
         }
+
+        [TestMethod]
+        [Repeat(100)]//ista prica kao i u prethodnom...
+        public void AddToSetNumberTest()//ovo je drugi test na koji sam mislio u prethodnom komentaru...
+        {
+            var cardSet = new TestCardSet();
+            var random = new Random();
+            var cardSetString = "";
+            for (var i = 0; i < 5; i++)
+            {
+                var cardNumber = random.Next(1, 15);
+                var card = new TestCard(cardNumber, Znak.CLUBS);
+                cardSet.AddToSet(card);
+                cardSetString = cardSetString + card + ", ";
+            }
+            Assert.AreEqual(cardSet.ToString(), cardSetString.TrimEnd(',', ' '));
+        }
+
 
         [TestMethod]
         public void SeeCardTest()
@@ -55,25 +85,24 @@ namespace CardPhunTests.CardTests
         public void CountTest()
         {
             var cardSet = new TestCardSet();
-            int actualCount = 0;
-            for (var i = 0; i < 10; i++)
+            var maxCount = 10;
+            for (var i = 0; i < maxCount; i++)
             {
                 var card = new TestCard(i+1, Znak.CLUBS);
                 cardSet.AddToSet(card);
-                actualCount += 1;
             }
-            Assert.AreEqual(cardSet.Count, actualCount);
+            Assert.AreEqual(cardSet.Count, maxCount);
 
         }
 
         [TestMethod]
-        public void PopFromSetTest()
+        public void PopFromSetTest()//dodaj 10 karata, oduzmi 3, 7...
         {
             var cardSet = new TestCardSet();
             var card = new TestCard(1, Znak.CLUBS);
             cardSet.AddToSet(card);
             cardSet.PopFromSet(true);
-            Assert.AreEqual(cardSet.Count, 0);
+            Assert.Fail("Odradi ovaj test");
         }
 
         [TestMethod]
@@ -87,11 +116,12 @@ namespace CardPhunTests.CardTests
                 firstSet.AddToSet(card);
             }
             secondSet.AddSet(firstSet);
-            Assert.AreEqual(secondSet.ToString(), firstSet.ToString());//e vidis, kada sam stavio samo areequal, nije radilo, kada sam dodao tostring(), proradilo, ZASTO?
+            //ako bih ispred secondSet stavio (object), koristio bi default tostring()!!! ovo je komentar za mene, a ne pitanje:P
+            Assert.AreEqual(secondSet.ToString(), firstSet.ToString());
         }
 
         [TestMethod]
-        public void GetCardListTest()//ne znam sta sam i zasto ovde radio, ali pogledati...
+        public void GetCardListTest()//ovde mi nisi napisao da li je ovo ok?
         {
             var firstSet = new TestCardSet();
             var secondSet = new TestCardSet();
