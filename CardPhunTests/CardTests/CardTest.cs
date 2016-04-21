@@ -57,22 +57,4 @@ namespace CardPhunTests
             //e vidis, ne znam kako ovo da odradim...       
         }
     }
-
-
-    class TestCard : Card   //posto je klasa bila abstract, 
-                            //napravio sam jednu ovde klasu koja 
-                            //nasledjuje sve onako kako jeste, i onda iz nje vucem...
-    {
-        public TestCard(int number, Znak suit) : base(number, suit)
-        {
-        }
-
-        public override int Value
-        {
-            get
-            {
-                return Number;
-            }
-        }
-    }
 }

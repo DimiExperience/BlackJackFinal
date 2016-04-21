@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using CardPhun;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
@@ -146,30 +145,4 @@ namespace CardPhunTests.CardTests
             Assert.AreEqual(cardSet.ToString(), "1 CLUBS, 2 CLUBS, 3 CLUBS");//HA, e vidis, nasao sam gresku preko testova:P i popravio
         }
     }
-
-    public class TestCardSet : CardSet<TestCard>
-    {
-        public override int GetSumOfCards()
-        {
-            int retVal = _mCards.Sum(card => card.Value);//e sada, ovo sam odradio copy/paste, aj da popricamo o ovome kada dodjem...
-            return retVal;
-        }
-    }
-
-    public class TestCard : Card 
-    {
-        public TestCard(int number, Znak suit) : base(number, suit)
-        {
-        }
-
-        public override int Value
-        {
-            get
-            {
-                return Number;
-            }
-        }
-    }
-
-
 }
