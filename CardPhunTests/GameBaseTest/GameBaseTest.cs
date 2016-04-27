@@ -13,7 +13,10 @@ namespace CardPhunTests.GameBaseTest
         public void AddPlayerTest()
         {
             var gameBase = new TestGameBase();
-            gameBase.AddPlayer;//zasto ne mogu da pristupim protected method-u?
+
+            //unit test mocking
+
+            //gameBase.AddPlayer;//zasto ne mogu da pristupim protected method-u?
         }
     }
 }

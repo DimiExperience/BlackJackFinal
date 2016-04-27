@@ -33,7 +33,7 @@ namespace BlackJack
             }
             if (retVal > 21)
             {
-                return -1;              //necu nista da diram da ne sjebem, ali mislim da ovo ove pravi problem
+                return -1;              //necu nista da diram da ne sjebem, ali mislim da ovo ovde pravi problem
             }
             if (retVal < 12)
             {

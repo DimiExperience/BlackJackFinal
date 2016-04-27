@@ -14,11 +14,22 @@ namespace Player
 
             if (balance < 0)
             {
-                throw new ArgumentException("Balance can't be negative!!!");//ovo ne znam kako da testiram
+                throw new NegativeBalanceException("Balance can't be negative");//ovo ne znam kako da testiram
             }
         }
         public int Balance { get; protected set; }
 
     }
-    
+
+    public class NegativeBalanceException : Exception
+    {
+        public string BaseMessage => base.Message;
+        public string CustomMessage { get; set; }
+
+        public NegativeBalanceException(string message)
+        {
+            this.CustomMessage = message;
+        }
+    }
+
 }

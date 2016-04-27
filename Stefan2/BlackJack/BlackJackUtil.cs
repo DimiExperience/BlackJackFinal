@@ -38,6 +38,11 @@ namespace CardPhun
                     retVal += 10;
                 }
             }
+
+            if (retVal > 21)
+            {
+                return -1;       
+            }
             return retVal;
         }
     }
