@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="BlackJackTests\BjCardSetTest.cs" />
     <Compile Include="BlackJackTests\BjDealerTest.cs" />
+    <Compile Include="BlackJackTests\BjGameTest.cs" />
     <Compile Include="BlackJackTests\BjPlayerTests.cs" />
     <Compile Include="BlackJackTests\BjCardTest.cs" />
     <Compile Include="BlackJackTests\BlackJackUtilTest.cs" />
